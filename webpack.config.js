@@ -39,7 +39,11 @@ module.exports = {
                 homepage: "homepage@https://sytac-webpack-module-federation.github.io/homepage/remoteEntry.js",
                 signup: "signup@https://sytac-webpack-module-federation.github.io/signup/remoteEntry.js",
             },
-            shared: {react: {singleton: true}, "react-dom": {singleton: true}}
+            shared: {
+                react: {singleton: true},
+                "react-dom": {singleton: true},
+                "react-router-dom": {singleton: true}
+            }
         }),
     ],
 };
