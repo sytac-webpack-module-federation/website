@@ -4,11 +4,12 @@ import Homepage from 'homepage/Homepage';
 import {
     createBrowserRouter,
     RouterProvider,
+    createHashRouter
   } from "react-router-dom";
 
 const MainApp = ({ children }) => {
 
-    const router = createBrowserRouter([
+    const router = createHashRouter([
         {
           path: "/",
           element: <Homepage />,
