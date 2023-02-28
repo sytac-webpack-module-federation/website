@@ -2,7 +2,6 @@ import React from 'react';
 import Signup from 'signup/Signup';
 import Homepage from 'homepage/Homepage';
 import {
-    createBrowserRouter,
     RouterProvider,
     createHashRouter
   } from "react-router-dom";
