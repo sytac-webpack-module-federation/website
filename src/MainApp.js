@@ -1,23 +1,25 @@
-import React from 'react';
-import Signup from 'signup/Signup';
+import React, { Suspense, lazy } from 'react';
 import Homepage from 'homepage/Homepage';
 import {
-    RouterProvider,
-    createHashRouter
-  } from "react-router-dom";
+  RouterProvider,
+  createHashRouter
+} from "react-router-dom";
+const Signup = lazy(() => import('signup/Signup'));
 
 const MainApp = ({ children }) => {
 
-    const router = createHashRouter([
-        {
-          path: "/",
-          element: <Homepage />,
-        },
-        {
-            path: "/signup",
-            element: <Signup />,
-          },
-      ]);
+  const router = createHashRouter([
+    {
+      path: "/",
+      element: <Homepage />,
+    },
+    {
+      path: "/signup",
+      element: <Suspense>
+        <Signup />
+      </Suspense>,
+    },
+  ]);
 
   return (
     <>
